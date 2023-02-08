@@ -16,6 +16,12 @@ export default function TextForm(props) {
     await navigator.clipboard.writeText(text);
     alert('Text copied');
   }
+  //for remove the extra space into the text
+  const handleExtraSpaces = async () => {
+    let newText=text;
+    newText=newText.replace(/\s+/g, ' ');
+    setText(newText)
+  }
 
   //for clear the text
   const handleClear = () => {
@@ -45,6 +51,7 @@ export default function TextForm(props) {
       <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
       <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to LowerCase</button>
       <button className="btn btn-primary mx-1" onClick={handleCopyToClipboard}>Copy to Clipboard</button>
+      <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
       <button className="btn btn-primary mx-1" onClick={handleClear}>Clear</button>
     </div>
     <div className="container my-3">
