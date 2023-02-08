@@ -5,28 +5,32 @@ export default function TextForm(props) {
     // console.log("Uppercase was clicked"+ text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to uppercase!", "success")
   };
   const handleLoClick = () => {
     // console.log("Uppercase was clicked"+ text);
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lowercase!", "success")
   };
   // For copy to clipboard
   const handleCopyToClipboard = async () => {
     await navigator.clipboard.writeText(text);
-    alert("Text copied");
+    props.showAlert("Copied to Clipboard!", "success")
   };
   //for remove the extra space into the text
   const handleExtraSpaces = async () => {
     let newText = text;
     newText = newText.replace(/\s+/g, " ");
     setText(newText);
+    props.showAlert("Remove Extra spaces!", "success")
   };
 
   //for clear the text
   const handleClear = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Clear the text!", "success")
   };
   const handleOnChange = (event) => {
     // console.log("On change");
