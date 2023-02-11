@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
+
 export default function Navbar(props) {
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
@@ -15,7 +16,7 @@ export default function Navbar(props) {
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">{props.aboutText}</a>
+          <a className="nav-link active" aria-current="page" href="/About">{props.aboutText}</a>
         </li>
       </ul>
       {/* <form className="d-flex" role="search">
