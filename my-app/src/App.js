@@ -7,9 +7,9 @@ import Alert from './components/Alert';
 import About from './components/About';
 
 
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-//let name = "Harry";
+
 function App() {
   const [mode, setMode] = useState('light'); //whnether dark mode is enabled or not 
   const [alert, setAlert] = useState(null); 
@@ -46,38 +46,38 @@ function App() {
  }
 
 
-  return (
-    <> 
-  <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
-   <Alert alert={alert}/>
-  <div className='container my-3'>
-<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>
-{/* <About/> */}
-  </div>
-  </>
-  );
-
-
-// return (
-//   <>
-//  <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
-//     <Alert alert={alert}/>
-//    <div className='container my-3'/>
-//  {/* <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/> */}
-//   <BrowserRouter>
-  
-//     <Routes>
-  
-  
-//       <Route path="/" element={<TextForm />}>
-//         {/* <Route index element={<About />} /> */}
-//         <Route path="/About" element={<About/>} />
-//       </Route>
-      
-//     </Routes>
-//   </BrowserRouter>
+//   return (
+//     <> 
+//   <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
+//    <Alert alert={alert}/>
+//   <div className='container my-3'>
+// <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>
+// {/* <About/> */}
+//   </div>
 //   </>
-// );
+//   );
+
+
+return (
+  <>
+   
+ {/* <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/> */}
+ 
+  <BrowserRouter>
+ <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
+ <Alert alert={alert}/>
+   <div className='container my-3'>
+
+    <Routes>
+      <Route path="/" element={<TextForm />}/>
+      <Route path="/About" element={<About />} />
+    </Routes>
+
+    </div>
+  </BrowserRouter>
+
+  </>
+);
 
 
 
